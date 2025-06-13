@@ -1,0 +1,183 @@
+:root {
+    --primary: #E53935;
+    --primary-dark: #C62828;
+    --dark: #121212;
+    --dark-gray: #1E1E1E;
+    --medium-gray: #2D2D2D;
+    --light-gray: #424242;
+    --text: #FFFFFF;
+    --text-secondary: #BDBDBD;
+    --accent: #FFC107;
+    --success: #4CAF50;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, var(--dark-gray), var(--dark));
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--light-gray);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+.link-productos {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.link-productos a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 1px solid var(--light-gray);
+}
+
+.link-productos a:hover {
+    color: var(--text);
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.ofertas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.oferta {
+    background: linear-gradient(145deg, var(--medium-gray), var(--dark-gray));
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--light-gray);
+    position: relative;
+}
+
+.oferta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary);
+}
+
+.oferta::before {
+    content: 'OFERTA';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.oferta img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.oferta-content {
+    padding: 1.5rem;
+}
+
+.oferta h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.oferta p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    text-decoration: line-through;
+}
+
+.precio-oferta {
+    color: var(--success);
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-decoration: none !important;
+}
+
+.btn-comprar {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-comprar:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+footer {
+    background: linear-gradient(135deg, var(--dark-gray), var(--dark));
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--light-gray);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .link-productos {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    .ofertas {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
